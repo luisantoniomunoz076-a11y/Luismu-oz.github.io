@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Con amor Para mi ELI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ffe6f0;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #d6336c;
+    }
+
+    /* Pantalla inicial */
+    .inicio {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #ff99cc, #ffe6f0);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .pingüinos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .pingüinos img {
+      width: 150px;
+      margin: 0 20px;
+      animation: bounce 2s infinite;
+    }
+
+    .corazon {
+      font-size: 80px;
+      color: red;
+      animation: pulse 1.5s infinite;
+    }
+
+    .boton {
+      padding: 15px 30px;
+      background-color: #ff4d94;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.3s;
+      margin-top: 30px;
+    }
+
+    .boton:hover {
+      transform: scale(1.1);
+      background-color: #e60073;
+    }
+
+    /* Sección flores */
+    .flores {
+      height: 100vh;
+      background: radial-gradient(circle, #ffe6f0, #ffb3c6);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .flores img {
+      width: 300px;
+      opacity: 0;
+      transform: translateY(100px) scale(0.1);
+      animation: crecer 3s forwards;
+    }
+
+    .texto-flores {
+      margin-top: 30px;
+      font-size: 2em;
+      color: #d6336c;
+      text-shadow: 2px 2px 5px white;
+      opacity: 0;
+      animation: aparecerTexto 3s forwards 2s;
+    }
+
+    /* Botón extra en esquina */
+    .boton-esquina {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 25px;
+      background-color: #ff80bf;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .boton-esquina:hover {
+      background-color: #ff4da6;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes crecer {
+      from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.1);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes aparecerTexto {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla inicial -->
+  <section class="inicio" id="inicio">
+    <div class="pingüinos">
+      <img src="snoopy.png" alt="Snoopy Ellie">
+      <span class="corazon">❤</span>
+      <img src="snoopy H.png" alt="Snoopy Luis">
+    </div>
+    <button class="boton" onclick="mostrarFlores()">💖Ojala y te guste(CLICK)💖</button>
+  </section>
+
+  <!-- Sección flores -->
+  <section class="flores" id="flores">
+    <div class="texto-flores">💖 Para mi persona favorita "ELI" 💖</div>
+    <img src="tulipanes.png" alt="Ramo de Tulipanes">
+    <div class="texto-flores">
+      <h6>💖 Tal vez no seas mi novia, Pero eso no impide amarte, que te quiera , te valore y que te piense. Hay personas que llegan sin promesas, sin compromisos, y aun así transforman lo cotidiano en algo especial. Tú eres una de ellas.
+No vengo a hablar de amor como lo pintan en películas. pero si de conexión, de esa paz que se siente cuando estamos juntos. No necesito que me correspondas, solo que sepas que tu existencia ya es suficiente para hacerme sonreír.
+A veces me descubro queriendo compartirte cosas sin razón, solo porque tu opinión me importa. O guardando momentos que me gustaría que vieras, porque tu mirada les da sentido. No es obsesión, no es deseo. Es admiración tranquila, es cariño que no exige nada.
+Y si algún día decides caminar a mi lado, lo haré con felicidad. Pero si no, seguiré deseándote lo mejor, aun que no sea conmigo, Porque lo que siento por ti no depende de lo que recibo, sino de lo que eres.
+Gracias por existir. Gracias por ser tú. Te amoo... ELI.💖</h6>
+    </div>
+  </section>
+
+  <!-- Botón en esquina que lleva a otra página -->
+  <button class="boton-esquina" onclick="irAPagina()">🐢</button>
+
+  <script>
+    function mostrarFlores() {
+      document.getElementById('inicio').style.display = 'none';
+      document.getElementById('flores').style.display = 'flex';
+    }
+
+    function irAPagina() {
+      // Aquí insertas la URL de tu nueva página
+      window.location.href = "TORTUGA.html";
+    }
+  </script>
+
+</body>
+</html>

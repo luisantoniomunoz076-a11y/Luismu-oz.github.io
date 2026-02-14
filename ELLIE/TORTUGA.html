@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Con amor para  my Eli</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #87cefa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Lluvia de corazones */
+    .corazon {
+      position: absolute;
+      top: -50px;
+      font-size: 30px;
+      color: rgb(158, 13, 13);
+      animation: caer 5s linear infinite;
+    }
+
+    @keyframes caer {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .texto {
+      font-size: 2em;
+      color: #270974;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="tortuga.avif" alt="Tortuga tierna">
+  <div class="texto">🐢 Te amo con amor infinito, como tortuga en pasitos bonitos y sin prisa asta el infinito  🐢</div>
+
+  <!-- Corazones generados -->
+  <script>
+    function crearCorazon() {
+      const corazon = document.createElement("div");
+      corazon.classList.add("corazon");
+      corazon.innerHTML = "❤";
+      corazon.style.left = Math.random() * window.innerWidth + "px";
+      document.body.appendChild(corazon);
+
+      setTimeout(() => {
+        corazon.remove();
+      }, 5000);
+    }
+
+    setInterval(crearCorazon, 500);
+  </script>
+
+</body>
+</html>
